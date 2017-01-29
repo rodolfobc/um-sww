@@ -1,0 +1,32 @@
+<section>
+	
+	<img src="assets/img/tatooine-banner.jpg">
+
+</section>
+
+
+<section class="container container-main error" ng-if="mainCtrl.throwError">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+	
+</section>
+
+<section class="container container-main" loader="mainCtrl.contentState.ready">
+
+	<div class="col-sm-8 col-sm-offset-2">
+		
+	    <blockquote>A long time ago in a galaxy far, far away....</blockquote>
+
+		<ul class="list--clean list--styled">
+			<li ng-repeat="character in mainCtrl.charactersList">			
+				<a ng-click="mainCtrl.goToCharacter(character.url);">{{character.name}}</a>
+			</li>
+		</ul>
+
+	</div>
+
+</section>

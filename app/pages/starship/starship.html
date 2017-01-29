@@ -1,0 +1,123 @@
+<div class="container container-main error" ng-if="starshipCtrl.throwError">
+	
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+
+</div>
+
+<section class="container container-main" loader="starshipCtrl.contentState.ready">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+		
+		<h1>Starship {{starshipCtrl.starship.name}}</h1>
+
+		<ul class="list--clean list--styled--spaced list-info">
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Name</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.name}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Model</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.model}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Manufacturer</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.manufacturer}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Class</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.starship_class}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Crew</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.crew}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Passengers</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{starshipCtrl.starship.passengers}}</p>
+
+				</div>
+
+			</li>
+
+		</ul>
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+
+	</div>	
+
+</section>

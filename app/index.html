@@ -1,0 +1,93 @@
+<!--
+.        .          .    .    .            .            .                   .
+               .               ..       .       .   .             .
+ .      .     T h i s   i s   t h e   g a l a x y   o f   . . .             .
+                     .              .       .                    .      .
+.        .               .       .     .            .
+   .           .        .                     .        .            .
+             .               .    .          .              .   .         .
+               _________________      ____         __________
+ .       .    /                 |    /    \    .  |          \
+     .       /    ______   _____| . /      \      |    ___    |     .     .
+             \    \    |   |       /   /\   \     |   |___>   |
+           .  \    \   |   |      /   /__\   \  . |         _/               .
+ .     ________>    |  |   | .   /            \   |   |\    \_______    .
+      |            /   |   |    /    ______    \  |   | \           |
+      |___________/    |___|   /____/      \____\ |___|  \__________|    .
+  .     ____    __  . _____   ____      .  __________   .  _________
+       \    \  /  \  /    /  /    \       |          \    /         |      .
+        \    \/    \/    /  /      \      |    ___    |  /    ______|  .
+         \              /  /   /\   \ .   |   |___>   |  \    \
+   .      \            /  /   /__\   \    |         _/.   \    \            +
+           \    /\    /  /            \   |   |\    \______>    |   .
+            \  /  \  /  /    ______    \  |   | \              /          .
+ .       .   \/    \/  /____/      \____\ |___|  \____________/ 
+                               .                                        .
+     .                           .         .               .                 .
+                .                                   .            .
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="starwarsApp" class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="starwarsApp" class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="starwarsApp" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="starwarsApp"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Star Wars Wiki</title>
+    <meta name="description" content="wiki starwarsApp">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <base href="/app"/>
+
+    <link rel='stylesheet' href='vendor/normalizecss/normalize.css'>
+    <link rel='stylesheet' href='vendor/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header ng-controller="headerCtrl as ctrl">
+        
+        <h1 class="logo util-inline-block"><a class="logo__link" ng-href="/">Star Wars Wiki</a>.wiki</h1>
+
+        <button class="btn-icon btn-mobile-menu util-color-maxi-lightest" ng-click="ctrl.toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+
+        <nav id="mainNav" class="util-inline-block main-nav" ng-class="{'active' : ctrl.isMainNavActive}">
+
+          <ul class="list--clean list--inline">
+            
+            <li><a ng-href="/favourites">favourites</a></li>
+
+            <li><a ng-href="/search">search</a></li>
+
+          </ul>
+          
+        </nav>
+
+    </header>
+
+    <main ng-view autoscroll="true"></main>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="common/loaderDirective.js"></script>
+    <script src="common/backButtonDirective.js"></script>
+    <script src="common/deleteFromListSectionDirective.js"></script>
+    <script src="helper/helperFactory.js"></script>
+    <script src="header/headerController.js"></script>
+    <script src="pages/main/mainController.js"></script>
+    <script src="pages/main/mainServices.js"></script>
+    <script src="pages/character/characterController.js"></script>
+    <script src="pages/character/characterServices.js"></script>
+    <script src="pages/planet/planetController.js"></script>
+    <script src="pages/planet/planetServices.js"></script>
+    <script src="pages/starship/starshipController.js"></script>
+    <script src="pages/starship/starshipServices.js"></script>
+    <script src="pages/favourites/favouritesController.js"></script>
+    <script src="pages/favourites/favouritesServices.js"></script>
+    <script src="pages/search/searchController.js"></script>
+</body>
+</html>

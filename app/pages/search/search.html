@@ -1,0 +1,55 @@
+<section class="container container-main error" ng-if="mainCtrl.throwError">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+	
+</section>
+
+<section class="container container-main" >
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<h1>Search</h1>
+
+		<form name="searchForm" class="util-align-center">
+
+			<div>
+				
+				<span>Search </span>
+
+				<select class="specialSelect" ng-options="searchType as searchType.label for searchType in searchCtrl.searchTypes track by searchType.id" ng-model="searchCtrl.selectedSearchType"></select>
+
+				<span> for </span>
+				
+				<input type="text" ng-model="searchCtrl.searchString">
+
+			</div>
+			
+			<button class="btn-default btn-default-wide" type="submit" ng-click="searchCtrl.submitSearch(searchCtrl.searchString)">search</button>
+
+		</form>
+
+		<p class="error util-align-center" ng-if="searchCtrl.noSearchError === true">Please write something to search for</p>
+
+		<div loader="searchCtrl.contentState.ready">
+
+			<ul class="list--clean list--styled">
+				<li ng-repeat="result in searchCtrl.resultsList">			
+					<a ng-click="searchCtrl.goToResult(result.url);">{{result.name}}</a>
+				</li>
+			</ul>
+
+			<p class="util-align-center" ng-if="searchCtrl.noResults && searchForm.$submitted && searchCtrl.noSearchError === false">Sorry, but no results match your search</p>
+
+		</div>
+
+		
+		
+	    
+
+	</div>
+
+</section>

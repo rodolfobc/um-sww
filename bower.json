@@ -1,0 +1,9 @@
+{
+  "name": "star-wars-wiki",
+  "description": "Star Wars Wiki App",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.6.0",
+    "angular-route": "~1.6.0"
+  }
+}

@@ -1,0 +1,121 @@
+<section class="container container-main error" ng-if="characterCtrl.throwError">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+
+</section>
+
+<section class="container container-main" loader="characterCtrl.contentState.ready">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+		
+		<h1 ng-class="{'util-no-margin-bottom': characterCtrl.isFavourite}">{{characterCtrl.character.name}}</h1>
+
+		<p class="font-size-small" ng-if="characterCtrl.isFavourite">Is on your favourites list!</p>
+
+		<button class="btn-default" ng-if="!characterCtrl.isFavourite" ng-click="characterCtrl.saveFavourite(characterCtrl.character)">save as favourite</button>
+
+		<button class="btn-default btn-default--danger" ng-if="characterCtrl.isFavourite" ng-click="characterCtrl.removeFavourite(characterCtrl.character)">remove from favourites</button>
+
+		<ul class="list--clean list--styled--spaced list-info">
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Name</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{characterCtrl.character.name}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Birth Year</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{characterCtrl.character.birth_year}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Height</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{characterCtrl.character.height}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Home planet</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p><a ng-click="characterCtrl.goToPlanet(characterCtrl.planetId.value)">{{characterCtrl.planetInfo.name}}</a></p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix" ng-if="characterCtrl.starshipsListState.empty === false">
+
+				<div class="col-sm-4">
+					
+					<p>Starships</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<ul class="list--clean">
+										
+						<li ng-repeat="starship in characterCtrl.starshipsInfo">
+							
+							<a ng-click="characterCtrl.goToStarship(starship.url);">{{starship.name}}</a>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</li>
+
+		</ul>
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+
+	</div>
+
+</section>

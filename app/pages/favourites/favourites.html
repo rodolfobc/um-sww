@@ -1,0 +1,57 @@
+<div class="container container-main error" ng-if="favouritesCtrl.throwError">
+	
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+
+</div>
+
+<section class="container container-main" loader="favouritesCtrl.contentState.ready">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+
+		<h1>Favourite characters</h1>
+		
+		<div class="warning" ng-if="favouritesCtrl.favouritesListState.empty === true">
+			
+			<p>You haven't selected any favourite characters yet.</p>
+
+			<p>To select a character as favourite, go to their profile page.</p>
+
+		</div>
+
+		<ul class="list--clean list--styled" ng-if="favouritesCtrl.favouritesListState.empty === false">
+				
+			<li ng-repeat="favourite in favouritesCtrl.favourites">
+
+				<a ng-click="favouritesCtrl.goToCharacter(favourite.id)">{{favourite.name}}</a>
+
+				<div delete-from-list-section>
+					
+					<button class="btn-icon btn-icon--remove"><span class="glyphicon glyphicon-remove-sign"></span></button>
+
+					<div class="list-delete-container">
+						
+						<p class="font-size-small">Are you sure you want to remove {{favourite.name}} from your favourites?</p>
+
+						<button class="btn-default btn-default--danger" ng-click="favouritesCtrl.removeFavourite(favourite.id)">Yes, remove</button>
+
+						<button class="btn-default btn-default--neutral" ng-click="">Cancel</button>
+
+					</div>
+
+				</div>
+
+			</li>
+
+		</ul>
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+
+	</div>
+
+</section>

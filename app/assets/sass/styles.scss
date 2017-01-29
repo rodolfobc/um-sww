@@ -1,0 +1,456 @@
+$dark-colour: #222;
+
+$medium-colour: #666;
+
+$light-colour: #a5a4a4;
+
+$lightest-colour: #cccccc;
+
+$extra-lightest-colour: #f6f6f6;
+
+$maxi-lightest-colour: #fff;
+
+$text-colour: $dark-colour;
+
+$error-colour: #da0000;
+
+$button-background-colour: $dark-colour;
+
+$button-hover-background-colour: $light-colour;
+
+$button-text-colour: $maxi-lightest-colour;
+
+@mixin transition($type,$duration,$curve) {
+	-webkit-transition: $type $duration $curve;
+	-moz-transition: $type $duration $curve;
+	-o-transition: $type $duration $curve;
+	-ms-transition: $type $duration $curve;        
+	transition: $type $duration $curve;
+}
+
+@mixin font-size($size:14px) {
+	@if $size == "x-small" {
+		font-size: 10px;
+	} @else if $size == "small" {
+		font-size: 12px;
+	} @else if $size == "medium" {
+		font-size: 14px;
+	} @else if $size == "large" {
+		font-size: 18px;
+	} @else if $size == "x-large" {
+		font-size: 24px;
+	} @else if $size == "x-x-large" {
+		font-size: 34px;
+		line-height: 38px;
+	}
+}
+
+body {
+	padding: 40px 0 60px;
+	font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	colour: $text-colour;
+}
+
+header {
+	display: block;
+	width: 100%;
+	height: 40px;
+	padding: 0 20px;
+	position: fixed;
+	top: 0;
+	z-index:100;
+	background-color: #000;
+}
+
+h1 {
+	@include font-size(x-x-large);
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+	color: $text-colour;
+	@include transition(all, 0.4s, ease-in-out);
+
+	&:hover {
+		text-decoration: none;
+		cursor: pointer;
+		color: $light-colour;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+blockquote {
+	color: $light-colour;
+	margin: 0 30px 30px;
+	padding: 30px;
+	text-align: center;
+	@include font-size(x-x-large);
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+}
+
+input {
+	padding: 5px 10px;
+}
+
+select {
+	padding: 5px 20px 5px 0;
+	text-align: left;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+select, input {
+	displayn: inline-block;
+	border: 1px solid $light-colour;
+	margin: 0 10px;
+}
+
+.font-size-x-small {
+	@include font-size(x-small);
+}
+
+.font-size-small {
+	@include font-size(small);
+}
+
+.font-size-medium {
+	@include font-size(medium);
+}
+
+.font-size-large {
+	@include font-size(large);
+}
+
+.font-size-x-large {
+	@include font-size(x-large);
+}
+
+.util-inline-block {
+	display: inline-block;
+}
+
+.util-align-center {
+	text-align: center;
+}
+
+.lightest-colour-background {
+	background-color: $lightest-colour;
+}
+
+.util-no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.util-color-maxi-lightest {
+	color: $maxi-lightest-colour;
+}
+
+.loader {
+    display: none;
+}
+
+.loader--loading {
+	text-align: center;
+	padding-top: 50px;
+
+	> * {
+	    display: none;
+	}
+
+	.loader {
+	    display: block;
+	}
+
+}
+
+.error {
+	color: $error-colour;
+}
+
+.list--clean {
+	list-style: none;
+	padding: 0;
+}
+
+.list--inline {
+	 li {
+	 	display: inline-block;
+	 }
+}
+
+.list--styled {
+	@include font-size(large);
+	font-weight: 300;
+
+	li {
+		@include transition(all, 0.6s, ease-in-out);
+		position: relative;
+		padding-right: 40px;
+
+		a {
+			display: block;
+			padding: 20px;
+
+			&:hover {
+				color: $maxi-lightest-colour;
+			}
+
+		}
+
+		&:nth-child(odd) {
+			background-color: $extra-lightest-colour;
+		}
+
+		&:hover {
+			background-color: $light-colour;
+			color: $extra-lightest-colour;
+		}
+
+		.btn-icon {
+			position: absolute;
+			right: 20px;
+			top: 25px;
+		}
+
+	}
+
+}
+
+.list--styled--spaced {
+
+	li {
+		margin-bottom: 2px;
+	}
+
+}
+
+.list-delete-container {
+	padding: 0 20px 20px;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.list-info {
+	margin-bottom: 30px;
+
+	> li {
+		background-color: $lightest-colour;
+	}
+
+	.col-sm-4 {
+		color: $maxi-lightest-colour;
+		font-weight: 400;
+	}
+
+	.col-sm-8 {
+		background-color: $maxi-lightest-colour;
+	}
+
+	ul {
+		margin: 13px 0 20px;
+
+		li {
+			margin-bottom: 5px;
+		}
+
+	}
+
+	a {
+		font-weight: 500;
+	}
+
+}
+
+.logo {
+	margin: 0 20px 0 0;
+	float: left;
+	color: $maxi-lightest-colour;
+	font-weight: 100;
+	@include font-size(x-large);
+}
+
+.logo__link {
+	display: inline-block;
+	width: 183px;
+	height: 40px;
+	text-indent: -9999px;
+	background: url(../img/star-wars-logo.png) 0 50% no-repeat transparent;
+}
+
+.btn-default {
+	margin: 10px 0;
+	padding: 10px 20px;
+	background-color: $button-background-colour;
+	border: none;
+	border-radius: 5px;
+	font-weight: 300;
+	color: $button-text-colour;
+	letter-spacing: 1px;
+	@include font-size(small);
+	@include transition(all, 0.2s, ease-in-out);
+
+	&:hover {
+		background-color: $button-hover-background-colour;
+	}
+}
+
+.btn-default-wide {
+	padding: 10px 40px;
+}
+
+.btn-default--danger {
+	background-color: $error-colour;
+}
+
+.btn-default--neutral {
+	background-color: $lightest-colour;
+}
+
+.btn-default--danger, .btn-default--neutral {
+
+	&:hover {
+		background-color: $dark-colour;
+	}
+
+}
+
+.btn-icon {
+	border: none;
+	background-color: transparent;
+}
+
+.btn-icon--remove {
+	color: $error-colour;
+}
+
+.btn-mobile-menu {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right:10px;
+	@include font-size(large);
+}
+
+.container-main {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.main-nav {
+	height: 40px;
+	padding-left: 10px;
+	border-left: 1px solid $maxi-lightest-colour;
+
+	ul {
+		margin: 0;
+	}
+
+	a {
+		height: 40px;
+		padding: 0 10px;
+		line-height: 40px;
+		font-weight: 100;
+		letter-spacing: 2px;
+		color: $maxi-lightest-colour;
+
+		&:hover {
+			color: $lightest-colour;
+		}
+	}
+	
+}
+
+.clearfix:before,
+.clearfix:after
+{
+    display: table;
+
+    content: ' ';
+}
+
+.clearfix:after
+{
+    clear: both;
+}
+
+.clearfix
+{
+    *zoom: 1;
+}
+
+@media (max-width:600px){
+
+	h1 {
+		@include font-size(x-large);
+	}
+
+	blockquote {
+		margin: 0 10px 30px;
+		padding: 0;
+	}
+
+	.list-info {
+
+		.col-sm-4, .col-sm-8 {
+			padding: 10px 20px;
+		}
+
+	}
+
+	.list--inline {
+		 li {
+		 	display: block;
+		 }
+	}
+
+
+	header {
+		height: auto;
+	}
+
+	.btn-mobile-menu {
+		display: block;
+	}
+
+	.logo {
+		float: none;
+	}
+
+	.main-nav {
+		border-left: none;
+		padding-left: 0;
+		display: none;
+		height: auto;
+
+		ul {
+			display: block;
+		}
+
+		a {
+			padding: 0;
+		}
+
+		&.active {
+			display: block;
+		}
+	}
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {
+
+	.logo__link {
+		background-image: url(../img/star-wars-logo@2x.png);
+		background-size: 183px 40px;
+	}
+
+}

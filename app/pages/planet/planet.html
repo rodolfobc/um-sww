@@ -1,0 +1,155 @@
+<div class="container container-main error" ng-if="planetCtrl.planetCtrl">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<p>Ooops! An error occured while getting the data, please refresh!</p>
+
+	</div>
+
+</div>
+
+<section class="container container-main" loader="planetCtrl.contentState.ready">
+
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+		
+		<h1>Planet {{planetCtrl.planet.name}}</h1>
+
+		<ul class="list--clean list--styled--spaced list-info">
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Name</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.name}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Population</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.population}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Diameter</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.diameter}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Gravity</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.gravity}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Terrain</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.terrain}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Surface Water</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.surface_water}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Climate</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.climate}}</p>
+
+				</div>
+
+			</li>
+
+			<li class="clearfix">
+
+				<div class="col-sm-4">
+					
+					<p>Rotation Period</p>
+
+				</div>
+
+				<div class="col-sm-8">
+					
+					<p>{{planetCtrl.planet.rotation_period}}</p>
+
+				</div>
+
+			</li>
+
+		</ul>
+
+		<a class="font-size-small" back-button><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+
+	</div>
+
+</section>
